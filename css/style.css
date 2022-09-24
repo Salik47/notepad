@@ -1,0 +1,98 @@
+.mainSection {
+	margin-top: 20px;
+	width: 90%;
+	height: 600px;
+	margin-left: 5%;
+	border: 1px solid blue;
+	border-radius: 6px;
+}
+
+.title {
+	text-align: center;
+	color: blue;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 1px solid blue;
+}
+
+.options {
+	padding: 20px;
+	display: flex;
+	border-bottom: 1px solid blue;
+}
+
+.formInput {
+	display: flex;
+	width: 100%;
+}
+
+.addButton {
+	width: 50px;
+	height: 50px;
+	border: 1px solid wheat;
+	border-radius: 50%;
+	background-color: beige;
+	color: blue;
+	cursor: pointer;
+}
+.titleInputSection {
+	width: 100%;
+}
+.inputTitle {
+	margin-left: 5%;
+	margin-top: 8px;
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
+.extraButton {
+	margin-top: 15px;
+	margin-left: 8%;
+	cursor: pointer;
+}
+
+.tabGroup {
+	padding: 20px;
+	display: flex;
+	border-bottom: 1px solid blue;
+}
+.tab {
+	margin: 0 4px;
+	border: 1px solid blue;
+	flex: 1;
+	text-align: center;
+}
+.contentBox {
+	width: 99.5%;
+}
+
+textarea {
+	width: 100%;
+	height: 41.5vh;
+	border: 1px solid wheat;
+	border-radius: 6px;
+	resize: vertical;
+}
+
+@media only screen and (max-width: 500px) {
+	.extraButton {
+		display: none;
+	}
+	.titleInputSection {
+		width: 70%;
+	}
+	.contentBox {
+		width: 98%;
+	}
+	textarea {
+		height: 45vh;
+	}
+}
+
+/* @media only screen and (max-width: 300px) {
+	.titleInputSection {
+		width: 80%;
+	}
+} */
