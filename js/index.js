@@ -10,13 +10,14 @@ notesObject = {};
 
 addButton.addEventListener("click", function () {
 	if (inputTitle.value === "") {
-		alert("Please Enter a title..");
+		alert("invalid input");
 		return;
 	}
 
 	let tab = document.createElement("section");
 	let text = document.createElement("p");
 	text.innerText = inputTitle.value;
+	text.style.display = "inline-block";
 	tab.appendChild(text);
 	tab.className = "tab";
 	tabGroup.append(tab);
@@ -40,6 +41,7 @@ addButton.addEventListener("click", function () {
 		let allTabs = document.querySelectorAll(".tab");
 		allTabs.forEach((tab) => {
 			tab.style.backgroundColor = "white";
+			tab.style.color = "black";
 		});
 
 		let allSaveButtons = document.querySelectorAll(".tab .save");
@@ -50,10 +52,15 @@ addButton.addEventListener("click", function () {
 		var saveB = document.getElementById(id);
 		console.log(saveB);
 
-		tab.style.backgroundColor = "blue";
+		tab.style.backgroundColor = "rgb(98, 152, 197)";
+		tab.style.color = "white";
+		tab.style.fontWeight = "bold";
 		console.log(notesObject[id], 3443);
 		noteInput.value = notesObject[id].content;
-		saveB.style.display = "block";
+		save.style.display = "inline-block";
+		save.style.float = "left";
+		save.style.margin = "10px";
+		save.style.width = "fit-content";
 	});
 
 	save.addEventListener("click", function () {
