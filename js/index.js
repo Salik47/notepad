@@ -41,27 +41,29 @@ addButton.addEventListener("click", function () {
       }
     });
 
-    // boldBtn.addEventListener("click", () => {
-    //   document.execCommand("bold");
-    // });
+    /*
+    boldBtn.addEventListener("click", () => {
+      document.execCommand("bold");
+    });
 
-    // italicBtn.addEventListener("click", () => {
-    //   document.execCommand("italic");
-    // });
-    // boldBtn.addEventListener("click", () => {
-    //   console.log("clicked bold button");
-    //   const boldElem = document.createElement("strong");
-    //   let selectedText = window.getSelection();
-    //   let selectedTextRange = selectedText.getRangeAt(0);
-    //   selectedTextRange.surroundContents(boldElem);
-    // });
+    italicBtn.addEventListener("click", () => {
+      document.execCommand("italic");
+    });
+    boldBtn.addEventListener("click", () => {
+      console.log("clicked bold button");
+      const boldElem = document.createElement("strong");
+      let selectedText = window.getSelection();
+      let selectedTextRange = selectedText.getRangeAt(0);
+      selectedTextRange.surroundContents(boldElem);
+    });
 
-    // italicBtn.addEventListener("click", () => {
-    //   const italicElem = document.createElement("em");
-    //   let selectedText = window.getSelection();
-    //   let selectedTextRange = selectedText.getRangeAt(0);
-    //   selectedTextRange.surroundContents(italicElem);
-    // });
+    italicBtn.addEventListener("click", () => {
+      const italicElem = document.createElement("em");
+      let selectedText = window.getSelection();
+      let selectedTextRange = selectedText.getRangeAt(0);
+      selectedTextRange.surroundContents(italicElem);
+    });
+    */
   }
 });
 

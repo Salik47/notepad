@@ -1,6 +1,7 @@
 body {
   background-color: #d8e2ff;
 }
+
 .mainSection {
   margin-top: 40px;
   width: 90%;
@@ -10,13 +11,16 @@ body {
   border-radius: 6px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }
+
 input:focus,
 textarea:focus {
   outline-width: 0;
 }
+
 h1 {
   margin-top: 0;
 }
+
 .title {
   padding-top: 20px;
   text-align: center;
@@ -49,9 +53,11 @@ h1 {
   color: white;
   cursor: pointer;
 }
+
 .titleInputSection {
   width: 100%;
 }
+
 .inputTitle {
   margin-left: 5%;
   margin-top: 8px;
@@ -62,6 +68,7 @@ h1 {
   border-radius: 4px;
   resize: vertical;
 }
+
 .extraButton {
   margin-top: 15px;
   margin-left: 8%;
@@ -74,15 +81,18 @@ h1 {
   display: flex;
   border-bottom: 1px solid blue;
 }
+
 .tab {
   margin: 0 4px;
   border: 1px solid blue;
   flex: 1;
   text-align: center;
 }
+
 .contentBox {
   width: 99.5%;
 }
+
 .save {
   background: #a069e2;
   border: none;
@@ -96,6 +106,7 @@ h1 {
   border-radius: 6px;
   resize: vertical;
 }
+
 .startNote {
   text-align: center;
   font-size: 50px;
