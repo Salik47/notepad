@@ -7,15 +7,34 @@ let tabGroup = document.querySelector(".tabGroup");
 let maxId = 0;
 
 notesObject = {};
+
+inputTitle.addEventListener('keydown', function(event){
+    if(event.key === 'Enter'){
+        event.preventDefault();
+		addNote()
+    }
+})
+
+
 if (!tabGroup.hasChildNodes()) {
 	tabGroup.style.display = "none";
 }
 
 addButton.addEventListener("click", function () {
+	addNote()
+});
+
+
+function addNote(){
 	if (inputTitle.value === "") {
 		alert("invalid input");
 		return;
 	}
+
+	let id = maxId++;
+    let title = inputTitle.value;
+    let singleNote = {title , content : ''};
+    notesObject[id] = singleNote;
 
 	let tab = document.createElement("section");
 	let text = document.createElement("p");
@@ -27,11 +46,6 @@ addButton.addEventListener("click", function () {
 	if (tabGroup.hasChildNodes()) {
 		tabGroup.style.display = "flex";
 	}
-	let id = maxId++;
-	let title = inputTitle.value;
-	let singleNote = { title, content: "" };
-	notesObject[id] = singleNote;
-	console.log(notesObject);
 
 	const save = document.createElement("button");
 	let saveIcon = document.createElement("img");
@@ -42,42 +56,76 @@ addButton.addEventListener("click", function () {
 	save.className = "save";
 	tab.appendChild(save);
 
-	tab.addEventListener("click", function (event) {
-		let allTabs = document.querySelectorAll(".tab");
-		allTabs.forEach((tab) => {
-			tab.style.backgroundColor = "#ffdbff";
-			tab.style.color = "black";
-		});
+    tab.addEventListener('click', function(event){
+        
+        unhiglightTabs(document.querySelectorAll('.tab'))
 
-		let allSaveButtons = document.querySelectorAll(".tab .save");
-		allSaveButtons.forEach((save) => {
-			save.style.display = "none";
-		});
+        let allSaveButtons = document.querySelectorAll('.tab .save')
 
-		var saveB = document.getElementById(id);
-		console.log(saveB);
+        hideAll(allSaveButtons)
+        highlightTab(tab, id);
 
-		tab.style.backgroundColor = "#a069e2";
-		tab.style.color = "#ffdbff";
-		tab.style.fontWeight = "bold";
-		console.log(notesObject[id], 3443);
-		noteInput.value = notesObject[id].content;
-		save.style.display = "inline-block";
-		save.style.float = "left";
-		save.style.margin = "10px";
-		save.style.width = "fit-content";
-	});
+        noteInput.addEventListener('input', function(){
+            if(noteInput.value !== notesObject[id].content){
+                hideAll(allSaveButtons);
+                showSaveButton(save);
+            }else{
+                hide(save)
+            }
+        })
 
-	save.addEventListener("click", function () {
-		let content = noteInput.value;
-		singleNote.content = content;
-		notesObject[id] = singleNote;
+    })
 
-		console.log(id);
-		save.style.display = "none";
+    save.addEventListener('click', function(){
+        let content = noteInput.value;
+        singleNote.content = content;
+        notesObject[id] = singleNote;
+        hide(save);
+    })
 
-		console.log(notesObject);
-	});
 
-	inputTitle.value = "";
-});
+
+    tab.click()
+    inputTitle.value = '';
+	
+}
+
+
+
+
+function hideAll(list){
+    list.forEach(element => {
+        element.style.display = 'none';
+    })
+}
+
+function hide(element){
+    element.style.display = 'none';
+}
+
+function displaySaveButton(save){
+
+}
+
+function highlightTab(tab, id){
+    tab.style.backgroundColor = "#a069e2";
+    tab.style.color = 'white';
+    tab.style.fontWeight = 'bold';
+    noteInput.value = notesObject[id].content;
+}
+
+function unhiglightTabs(allTabs){
+    console.log(878)
+    allTabs.forEach(tab => {
+        tab.style.backgroundColor = "#ffdbff";
+        tab.style.color = 'black';
+    });
+}
+
+
+function showSaveButton(save){
+    save.style.display = 'inline-block';
+    save.style.float = 'left';
+    save.style.margin =  '10px';
+    // save.style.width = 'fit-content';
+}
