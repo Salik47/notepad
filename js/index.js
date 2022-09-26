@@ -1,12 +1,15 @@
 let inputTitle = document.querySelector(".inputTitle");
 let noteInput = document.querySelector(".noteInput");
-let contentBox = document.querySelector(".contentBox");
+// let contentBox = document.querySelector(".contentBox");
 let addButton = document.querySelector(".addButton");
-let saveButton = document.querySelector(".saveButton");
+// let saveButton = document.querySelector(".saveButton");
 let tabGroup = document.querySelector(".tabGroup");
 let maxId = 0;
 
 notesObject = {};
+if (!tabGroup.hasChildNodes()) {
+	tabGroup.style.display = "none";
+}
 
 addButton.addEventListener("click", function () {
 	if (inputTitle.value === "") {
@@ -21,7 +24,9 @@ addButton.addEventListener("click", function () {
 	tab.appendChild(text);
 	tab.className = "tab";
 	tabGroup.append(tab);
-
+	if (tabGroup.hasChildNodes()) {
+		tabGroup.style.display = "flex";
+	}
 	let id = maxId++;
 	let title = inputTitle.value;
 	let singleNote = { title, content: "" };
@@ -40,7 +45,7 @@ addButton.addEventListener("click", function () {
 	tab.addEventListener("click", function (event) {
 		let allTabs = document.querySelectorAll(".tab");
 		allTabs.forEach((tab) => {
-			tab.style.backgroundColor = "white";
+			tab.style.backgroundColor = "#ffdbff";
 			tab.style.color = "black";
 		});
 
@@ -52,8 +57,8 @@ addButton.addEventListener("click", function () {
 		var saveB = document.getElementById(id);
 		console.log(saveB);
 
-		tab.style.backgroundColor = "rgb(98, 152, 197)";
-		tab.style.color = "white";
+		tab.style.backgroundColor = "#a069e2";
+		tab.style.color = "#ffdbff";
 		tab.style.fontWeight = "bold";
 		console.log(notesObject[id], 3443);
 		noteInput.value = notesObject[id].content;
