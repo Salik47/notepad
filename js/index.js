@@ -2,6 +2,7 @@ let inputTitle = document.querySelector(".inputTitle");
 let noteInput = document.querySelector(".noteInput");
 // let contentBox = document.querySelector(".contentBox");
 let addButton = document.querySelector(".addButton");
+const copyToClipboardButton = document.querySelector("#cpy-btn");
 // let saveButton = document.querySelector(".saveButton");
 let tabGroup = document.querySelector(".tabGroup");
 let maxId = 0;
@@ -45,6 +46,17 @@ function addNote(){
 	tabGroup.append(tab);
 	if (tabGroup.hasChildNodes()) {
 		tabGroup.style.display = "flex";
+        copyToClipboardButton.addEventListener("click", () => {
+            let selectedText = window.getSelection();
+            if (selectedText.type === "Range") {
+              navigator.clipboard.writeText(selectedText.toString()); //! Search for it later
+              selectedText.type = "Caret";
+            } else {
+              noteInput.select();
+              noteInput.setSelectionRange(0, 99999);
+              navigator.clipboard.writeText(noteInput.value); //! Search for it later
+            }
+          });
 	}
 
 	const save = document.createElement("button");
