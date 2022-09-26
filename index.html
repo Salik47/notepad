@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/style.css" />
-		<title>NotePad</title>
-	</head>
-	<body>
-		<section class="mainSection">
-			<section class="title">
-				<h1>NotePad</h1>
-			</section>
-			<section class="options">
-				<form class="formInput">
-					<section>
-						<input type="button" value="+" class="addButton" />
-					</section>
-					<section>
-						<!-- <input type="button" value="Save" class="saveButton" /> -->
-					</section>
-					<section class="titleInputSection">
-						<input
-							type="text"
-							placeholder="Add Your Titile here..."
-							class="inputTitle"
-						/>
-					</section>
-				</form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>NotePad</title>
+  </head>
+  <body>
+    <section class="mainSection">
+      <section class="title">
+        <h1>NotePad</h1>
+      </section>
+      <section class="options">
+        <form class="formInput">
+          <section>
+            <input type="button" value="+" class="addButton" />
+          </section>
+          <section>
+            <!-- <input type="button" value="Save" class="saveButton" /> -->
+          </section>
+          <section class="titleInputSection">
+            <input
+              type="text"
+              placeholder="Add Your Titile here..."
+              class="inputTitle"
+            />
+          </section>
+        </form>
 
-				<section class="extraButton">
-					<img
-						id="cpy-btn"
-						src="https://img.icons8.com/material-rounded/24/a069e2/copy.png"
-					/>
-				</section>
-				<section class="extraButton">
-					<img src="https://img.icons8.com/metro/26/a069e2/bold.png" />
-				</section>
-				<section class="extraButton">
-					<img
-						src="https://img.icons8.com/material-outlined/24/a069e2/italic.png"
-					/>
-				</section>
-			</section>
-			<section class="tabGroup"></section>
-			<section class="contentBox">
-				<!-- <p class="note-para"></p> -->
-				<textarea
-					placeholder="Add notes content here..."
-					class="noteInput"
-				></textarea>
-			</section>
-		</section>
-		<script src="./js/index.js"></script>
-	</body>
+        <section class="extraButton">
+          <img
+            id="cpy-btn"
+            src="https://img.icons8.com/material-rounded/24/a069e2/copy.png"
+          />
+        </section>
+        <section class="extraButton">
+          <img
+            id="bold-btn"
+            src="https://img.icons8.com/metro/26/a069e2/bold.png"
+          />
+        </section>
+        <section class="extraButton">
+          <img
+            id="italic-btn"
+            src="https://img.icons8.com/material-outlined/24/a069e2/italic.png"
+          />
+        </section>
+      </section>
+      <section class="tabGroup"></section>
+      <section class="contentBox">
+        <!-- <p class="note-para"></p> -->
+        <textarea
+          placeholder="Enter the title to begin"
+          disabled="true"
+          class="noteInput startNote"
+        ></textarea>
+      </section>
+    </section>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

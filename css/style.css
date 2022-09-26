@@ -1,110 +1,120 @@
 body {
-	background-color: #d8e2ff;
+  background-color: #d8e2ff;
 }
 .mainSection {
-	margin-top: 40px;
-	width: 90%;
-	height: 100%;
-	margin-left: 5%;
-	border: 1px solid blue;
-	border-radius: 6px;
+  margin-top: 40px;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  border: 1px solid blue;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }
 input:focus,
 textarea:focus {
-	outline-width: 0;
+  outline-width: 0;
 }
 h1 {
-	margin-top: 0;
+  margin-top: 0;
 }
 .title {
-	padding-top: 20px;
-	text-align: center;
-	color: white;
-	background-color: #a069e2;
-	font-size: 25px;
-	font-weight: bold;
-	border-bottom: 1px solid blue;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  background-color: #a069e2;
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom: 1px solid blue;
 }
 
 .options {
-	background-color: #ffdbff;
-	padding: 20px;
-	display: flex;
-	border-bottom: 1px solid blue;
+  background-color: #ffdbff;
+  padding: 20px;
+  display: flex;
+  border-bottom: 1px solid blue;
 }
 
 .formInput {
-	display: flex;
-	width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .addButton {
-	width: 50px;
-	height: 50px;
-	font-size: 25px;
-	border: 1px solid wheat;
-	border-radius: 50%;
-	background-color: #a069e2;
-	color: white;
-	cursor: pointer;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  border: 1px solid wheat;
+  border-radius: 50%;
+  background-color: #a069e2;
+  color: white;
+  cursor: pointer;
 }
 .titleInputSection {
-	width: 100%;
+  width: 100%;
 }
 .inputTitle {
-	margin-left: 5%;
-	margin-top: 8px;
-	width: 100%;
-	padding: 12px;
-	background-color: #ffe;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	resize: vertical;
+  margin-left: 5%;
+  margin-top: 8px;
+  width: 100%;
+  padding: 12px;
+  background-color: #ffe;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 .extraButton {
-	margin-top: 15px;
-	margin-left: 8%;
-	cursor: pointer;
+  margin-top: 15px;
+  margin-left: 8%;
+  cursor: pointer;
 }
 
 .tabGroup {
-	background-color: #ffdbff;
-	padding: 20px;
-	display: flex;
-	border-bottom: 1px solid blue;
+  background-color: #ffdbff;
+  padding: 20px;
+  display: flex;
+  border-bottom: 1px solid blue;
 }
 .tab {
-	margin: 0 4px;
-	border: 1px solid blue;
-	flex: 1;
-	text-align: center;
+  margin: 0 4px;
+  border: 1px solid blue;
+  flex: 1;
+  text-align: center;
 }
 .contentBox {
-	width: 99.5%;
+  width: 99.5%;
+}
+.save {
+  background: #a069e2;
+  border: none;
 }
 
-textarea {
-	width: 100%;
-	height: 52vh;
-	background-color: #ffe;
-	border: 1px solid wheat;
-	border-radius: 6px;
-	resize: vertical;
+.noteInput {
+  width: 100%;
+  height: 52vh;
+  background-color: #ffe;
+  border: 1px solid wheat;
+  border-radius: 6px;
+  resize: vertical;
+}
+.startNote {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 500px) {
-	.extraButton {
-		display: none;
-	}
-	.titleInputSection {
-		width: 70%;
-	}
-	.contentBox {
-		width: 98%;
-	}
-	textarea {
-		height: 45vh;
-	}
+  .extraButton {
+    display: none;
+  }
+  .titleInputSection {
+    width: 70%;
+  }
+  .contentBox {
+    width: 98%;
+  }
+  .noteInput {
+    height: 45vh;
+  }
 }
 
 /* @media only screen and (max-width: 300px) {
@@ -112,3 +122,11 @@ textarea {
 		width: 80%;
 	}
 } */
+
+#content {
+  padding: 20px;
+  background-color: #ffe;
+  outline: none;
+  min-height: 400px;
+  /* margin: 30px 0; */
+}
